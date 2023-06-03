@@ -62,7 +62,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'../frontend/templates')],
+        'DIRS': [os.path.join(BASE_DIR,'frontend/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -140,7 +140,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,"static")
 
 # For multiple static files in different apps
 STATICFILES_DIRS = [
-     os.path.join(BASE_DIR,'../frontend/static')
+     os.path.join(BASE_DIR,'frontend/static')
  ]
 
 
@@ -152,6 +152,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = "media/"
 
-MEDIA_ROOT =  os.path.join(BASE_DIR,"../frontend/media")
+MEDIA_ROOT =  os.path.join(BASE_DIR,"frontend/media")
 
 GPT_KEY = "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"
