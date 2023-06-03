@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> EcoIN | Store </title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        .development {
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            margin:auto;
+            margin-top:150px;
+            margin-bottom:150px;
+        }
+        .box-wrapper {
+            
+            display: flex;
+            align-items:center;
+            justify-content:center;
+            min-width:280px;
+            height:150px;
+            font-size:20px;
+            border-radius:10px;
+            border: 1px solid black;
+            flex-direction:column;
+        }
+        .content-tag {
+            display: flex;
+            height: 95vh;
+            width:100%;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    {% comment %} {% endcomment %}
+    <div class="content-tag">
+        <div class="development">
+            <div class="box-wrapper">
+                Under Development   <br>
+                <a href="{% url 'Base:Home' %}">Go Back</a>
+            </div>
+        </div> 
+    </div>
+    {% include 'components/footer.html' %}
+
+</body>
+</html>

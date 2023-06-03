@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoIN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footercss.css' %}">
+    <link rel="stylesheet" href="{% static 'css/proCard.css' %}">
+</head>
+<body>
+        
+<!-- Navbar -->
+{% include 'components/navbar.html' %}
+<!-- End Navbar-->
+
+<!-- About Site -->
+<div class="showBox container">
+    <div>
+        <h1>Eco<font color="#00ffd9">IN</font></h1>
+        <h3>We are the change !</h3>
+        <p>
+            Find all the services you need for yourself or your business right here. Experience the revolution. Be the revolution.
+        </p>
+    </div>
+</div>
+
+<!-- ProCards for different sections of site -->
+<a href="#">
+<div class="proCard container">
+    <div class="proCardLeft"></div>
+    <div class="proCardRight">
+        <div class="proCardHeading">
+            Green 4 U
+        </div>
+        <div class="proCardSubHeading">
+            Get personalized recommendations for you or your company
+        </div>
+        <div class="proCardPara">
+            Use our Greenbook to calculate your carbon footprint.<br><br>
+            With our Greenlink, find your recommended services.
+        </div>
+        <div class="proCardContainer">
+            <div class="proCardLink">Greenbook <i class="fas fa-link" style="float: right; line-height: 1.5rem;"></i></div>
+            <div class="proCardLink">GreenLink <i class="fas fa-link" style="float: right; line-height: 1.5rem;"></i></div>
+        </div>
+    </div>
+</div>
+</a>
+<a href="{% url 'Base:Home' %}">
+<div class="proCard container">
+    <div class="proCardRight" style="background-image: linear-gradient(to right, rgba(0,0,0,0.1),rgba(0,0,0,0)); float: right;">
+        <div class="proCardHeading">
+            Eco Store
+        </div>
+        <div class="proCardSubHeading">
+            Buy or sell our verified eco-friendly product.
+        </div>
+        <div class="proCardPara">
+            Buy and<font color="#02d01d"> Earn Leafs</font> to redeem then for planting a sapling, ocean cleanup, or reduce carbon offset.
+        </div>
+        <div class="proCardContainer">
+            <div class="proCardLink">Store <i class="fas fa-link" style="float: right; line-height: 1.5rem;"></i></div>
+            <div class="proCardLink">Redeem Leafs <i class="fas fa-link" style="float: right; line-height: 1.5rem;"></i></div>
+        </div>
+    </div>
+    <div class="proCardLeft" style="background-image: linear-gradient(to left, rgba(0,0,0,0.1),rgba(0,0,0,0));"></div>
+</div>
+</a>
+<a href="#">
+<div class="proCard container">
+    <div class="proCardLeft"></div>    
+    <div class="proCardRight">
+        <div class="proCardHeading">
+            Eco Educate
+        </div>
+        <div class="proCardSubHeading">
+            Educate yourself and join our community
+        </div>
+        <div class="proCardPara">
+            Go to our education section and find new content<br><br>
+            Connect with our community, build a better future.    
+        </div>
+        <div class="proCardContainer">
+            <div class="proCardLink">Greenbook <i class="fas fa-link" style="float: right; line-height: 1.5rem;"></i></div>
+            <div class="proCardLink">GreenLink <i class="fas fa-link" style="float: right; line-height: 1.5rem;"></i></div>
+        </div>
+    </div>
+</div>
+</a>
+<!-- Footer -->
+{% include 'components/footer.html' %}
+</body>
+</html>

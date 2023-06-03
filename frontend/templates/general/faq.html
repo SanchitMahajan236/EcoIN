@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footercss.css' %}">
+</head>
+<body>
+<div class="mainWrapper">
+<!-- Navbar -->
+{% include 'components/navbar.html' %}
+<!-- End Navbar-->
+
+  <div class="showBox container">
+    <section>
+      <br>
+      <h2>General Questions</h2>
+      </br>
+      <div class="faq-item">
+        <h3>What are your business hours?</h3>
+        <p>Our business hours are Monday to Friday from 9 AM to 5 PM.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you offer free shipping?</h3>
+        <p>Yes, we offer free shipping on all orders.</p>
+      </div>
+    </section>
+
+    <section>
+      <br>
+      <h2>Product Questions</h2>
+      </br>
+      <div class="faq-item">
+        <h3>How do I return a product?</h3>
+        <p>To return a product, please contact our customer support team.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I track my order?</h3>
+        <p>Yes, you can track your order using the tracking number provided.</p>
+      </div>
+    </section>
+  </div>
+
+  <!--footer-->
+  {% include 'components/footer.html' %}
+</div>
+</body>
+</html>

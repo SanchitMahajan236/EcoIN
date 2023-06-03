@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/carbonfoot/business.css' %}">
+    <link rel="stylesheet" href="/EcoIN/frontend/static/carbonfoot/business.css">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <div class="container">
+        <h1>Carbon FootPrint Calculator</h1>
+       <form action="" class="box">
+            <label for="bill">Electricity Consumption : </label>
+            <input type="text" id="bill" name="bill" placeholder="Enter Amount of Units Consumed">
+            <label for="car">Car Type (Used for Transporting Employs) : </label>
+            <select name="car" id="car">
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+                <option value="cng">CNG</option>
+                <option value="ev">Ev and Hybrids</option>
+            </select>
+            <label for="mileage">MileAge : </label>
+            <input type="text" name="'mileage" id="mileage" placeholder="Enter MileAge of your car">
+            <label for="distance">Distance Travelled : </label>
+            <input type="text" id="distance" name="distance" placeholder="Enter Distance Travelled">
+            <label for="ac">Air Condition Usage : </label>
+            <input type="text" id="ac" name="ac" placeholder="Enter Air Condition Consumption">
+            <button type="submit">Calculate</button>
+       </form>
+    </div>
+
+    {% include 'components/footer.html' %}
+</body>
+</html>

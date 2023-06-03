@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+<link rel="stylesheet" href="{% static 'CSS/userProfile.css' %}">
+<div class="wrapper">
+    <nav>
+      <input type="checkbox" id="show-search" />
+      <input type="checkbox" id="show-menu" />
+      <label for="show-menu" class="menu-icon"
+        ><i class="fas fa-bars"></i
+      ></label>
+      <div class="content">
+        <div class="logo"><a href="{% url 'Base:Home' %}">EcoIN</a></div>
+        <ul class="links">
+          <li><a href="{% url 'blogs:home' %}">Home</a></li>
+          <li><a href="{% url 'blogs:home' %}">About</a></li>
+          <li><a href="{% url 'Base:FAQ' %}">FAQ</a></li>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'UserProfile' request.user.username %}" class="desktop-link">{{request.user.username}}</a>
+            <input type="checkbox" id="show-features" />
+            <label for="show-features">{{request.user.username}}</label>
+            <ul>
+                <li><a href="#">Profile</a></li>
+                <li><a href="{% url 'Base:Logout' %}">Logout</a></li>
+                <li><a href="{% url 'blogs:User-Blogs' %}">Your Blogs</a></li>
+            </ul>
+        </li>
+        <li><a href="{% url 'blogs:create-post' %}">Create Blogs</a></li>
+          {% else %} 
+          <li><a href="{% url 'Base:Login' %}">Login/Signup</a></li>
+          {% endif %}
+          </ul>
+        </div>
+        <label for="show-search" class="search-icon"
+          ><i class="fas fa-search"></i
+        ></label>
+        <form action="" method="post" class="search-box">
+            {% csrf_token %}
+          <input
+            type="text"
+            placeholder="Type Something to Search..."
+            name = "search-title"
+          />
+          <button type="submit" class="go-icon">
+            <i class="fas fa-long-arrow-alt-right"></i>
+          </button>
+        </form>
+      </nav>
+</div>
+</html>
