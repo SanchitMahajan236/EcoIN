@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+</head>
+<style>
+    * {
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    .blog-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 30px);
+        min-height: calc(100vh - 200px);
+        margin:15px;
+        flex-wrap: wrap;
+    }
+    .blog-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100vw;
+
+        font-size: 30px;
+        font-weight: 400;
+    }
+    .blog-content {
+        font-size: 17px;
+    }
+    .related-searches {
+        display:flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    a {
+        padding:5px 15px;
+    }
+    ::-webkit-scrollbar {
+        width:0px;
+    }
+    .author {
+        display: flex;
+        
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .blog-content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        font-size: 18px;
+    }
+</style>
+{% include 'components/navbar.html' %}
+<body>
+<div class="main-wrapper">
+    <div class="blog-wrapper">
+        <div class="blog-title">{{ title }}</div>
+        <!-- <div class="author">Author:{{ author }}</div> -->
+        {% comment %} <div class="posted-at">Date:{{ posted-at }}</div> {% endcomment %}
+        <div class="blog-content">
+            {% comment %} Blog-content
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt eaque, quas perferendis eum
+            necessitatibus tenetur repellat facilis excepturi obcaecati ut ad enim sit consequatur ratione dolore
+            consequuntur non nulla, cum magnam? Reiciendis sequi distinctio ducimus et, quis consectetur dolore quae at
+            veritatis nemo soluta id iusto, quidem perferendis eos nisi asperiores sapiente illum officia sint. {% endcomment %}
+            {% for i in content %}
+            <p>{{i}}</p>
+            {% endfor %}
+        </div>
+    </div>
+    {% comment %} <div class="related-searches">
+        <a href="#">Search1</a> <br>
+        <a href="#">Search2</a> <br>
+        <a href="#">Search3</a> <br>
+        <a href="#">Search4</a> <br>
+        <a href="#">Search5</a> <br>
+        <a href="#">Search6</a> <br>
+        <a href="#">Search7</a> <br>
+        <a href="#">Search8</a> <br>
+        <a href="#">Search9</a> <br>
+    </div> {% endcomment %}
+</div>
+    {% include 'components/footer.html' %}
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/marketplace/productCard.css' %}">
+</head>
+<body>
+<div class="mainWrapper">
+    {% include 'components/navbar.html' %}
+    <div class="mainContainer">
+    {% for item in items %}
+    {% comment %} Product id needs to added as hidden attribute {% endcomment %}
+        <div class="card">
+            <div class="cardWrapper" onclick="showProduct({{item.id}})">
+            <img src="{% static 'images/' %}{{item.Img}}" alt="Product Image" height="150px">
+            <h2> {{item.Name }}</h2>
+            <h6>{{ item.Company }}</h6>
+            <h4>&#8377; <span>{{ item.Price }}</span></h4>
+            <p>{{ item.Desc }}</p>
+            </div>
+            <button class="toCart" onclick="addCart({{item.id}})">Add to cart</button>
+            <button style="float: right;" class="fav"><i onclick="myFunction(this,{{item.id}})" class="fa fa-heart-o fa-heart"></i></button>
+        </div>
+    {% endfor %}
+    </div>
+    {% include 'components/footer.html' %}
+</div>
+    <script>
+        function showProduct(id) {
+            window.location = "http://localhost:8000/store/product/" + id;
+        }
+        var productData = {
+            name: "Product Name",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis diam eu mi dictum tempus. Aenean posuere eu urna eget condimentum.",
+            image: "product-image.jpg",
+            wishlisted: 0
+        };
+
+        
+        var cards = document.getElementsByClassName("card")
+        for (let i = 0; i < cards.length; i++) {
+
+            let wishclickcount = 0;
+            var favButton = cards[i].querySelector(".fav");
+
+            async function myFunction(x,id) {
+                wishclickcount += 1;
+                productData.wishlisted = wishclickcount%2;
+                x.classList.toggle("fa-heart-o");
+            }
+        }
+    </script>
+</body>
+</html>

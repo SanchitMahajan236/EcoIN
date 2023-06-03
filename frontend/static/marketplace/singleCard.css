@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-cont{
+    height: 100vh;
+    margin:20px 80px;
+    padding:30px;
+    display: flex;
+    gap: 40px;
+}
+
+.main-cont>img{
+    height:80%;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.info-cont{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: flex-start;
+}
+
+.info-cont h2{
+    font-size: 2.7rem;
+}
+.info-cont h6{
+    font-size: 1.4rem;
+    opacity: 0.5;
+}
+.info-cont h4{
+    font-size: 1.8rem;
+}
+.info-cont p{
+    font-size: 1.5rem;
+}
+.btn-cont button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 0.7rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.info-cont .btn-cont .fav{
+    background: none;
+    padding: 0;
+    margin-left: 20px;
+}
+.fa-heart{
+    color: red;
+    font-size: 1.5rem;
+}
+.fa-heart-o{
+    color: black;
+    font-size: 1.5rem;
+}
+.btn-cont .toCart{
+    background: rgba(255, 255, 255, 0.19);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
+}
+.btn-cont .buyNow-btn{
+    padding: 0.8rem 1.4rem;
+    font-size: 1.1rem;
+    background-color: rgb(58, 238, 58);
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width:1000px) {
+    .main-cont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}

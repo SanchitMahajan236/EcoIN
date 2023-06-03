@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footercss.css' %}">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .mainWrapper {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    width: 100vw;
+  }
+  a {
+        text-decoration:none;
+        padding: 8px 13px;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 9px 17px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        font-family: sans-serif;
+      }
+</style>
+<body>
+    
+  <!-- Navbar -->
+  {% include 'components/navbar.html' %}
+  <!-- End Navbar-->
+  
+  <div class="mainWrapper">
+  <main>
+    <section>
+      <h2>Welcome to our website!</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tincidunt maximus. Sed sit amet quam magna. Phasellus mattis est in ipsum mollis, sit amet consequat elit rhoncus.</p>
+    </section>
+
+    <section>
+      <h2>Our Mission</h2>
+      <p>Nulla facilisi. Nunc euismod felis id est vestibulum consectetur. Donec id aliquet risus, et iaculis libero. Fusce dapibus lectus in gravida aliquet.</p>
+    </section>
+
+    <section>
+      <h2>Meet the Team</h2>
+      <div class="team-member">
+        <img src="john.jpg" alt="John Doe">
+        <h3>John Doe</h3>
+        <p>Co-Founder</p>
+      </div>
+      <div class="team-member">
+        <img src="jane.jpg" alt="Jane Smith">
+        <h3>Jane Smith</h3>
+        <p>Marketing Manager</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+  <!--footer-->
+  {% include 'components/footer.html' %}
+  
+</body>
+</html>

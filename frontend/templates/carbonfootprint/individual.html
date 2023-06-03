@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/carbonfoot/individual.css' %}">
+    <link rel="stylesheet" href="/EcoIN/frontend/static/carbonfoot/individual.css">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <div class="container">
+        {% if emission %}
+        <h1> You carbon emission is: {{emission}} </h1>
+        {% else%}
+        <h1>Carbon FootPrint Calculator</h1>
+        {% endif %}
+       <form action="" method="POST" class="box">
+            {% csrf_token %}
+            <label for="bill">Electricity Consumption : </label>
+            <input type="text" id="bill" name="electricity" placeholder="Enter Amount of Units Consumed" value={{electricity}}>
+            <label for="vehicle">Car Type : </label>
+            <select name="vehicle" id="car" value={{vehicle}}>
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+                {% comment %} <option value="cng">CNG</option>
+                <option value="ev">Ev and Hybrids</option> {% endcomment %}
+            </select>
+            <label for="mileage">MileAge : </label>
+            <input type="text" name="mileage" id="mileage" placeholder="Enter MileAge of your car"  value={{mileage}}>
+            <label for="distance">Distance Travelled : </label>
+            <input type="text" id="distance" name="distance" value={{distance}} placeholder="Enter Distance Travelled">
+            <label for="gas">LPG Consumption (in grams) : </label>
+            <input type="text" id="gas" name="gas" value={{gas}} placeholder="Enter LPG Consumption">
+            <label for="ac">Air Conditioner Usage : </label>
+            <input type="text" id="ac" name="ac" value={{ac}} placeholder="Enter Air Condition Consumption">
+            <button type="submit">Calculate</button>
+       </form>
+       {% if prompt %}
+       <div class="promptBox">
+        <div class="tips">
+            <div class="heading">Here are some tips you can improve:</div>
+            Try to reduce the usage of current by spending more time outside the home.
+            <br>
+            Reduce the time of your AC usage
+            <br>
+            Prefer cab sharing
+            
+        </div>
+       </div>
+       {% else %}
+       {% endif %}
+    </div>
+
+    {% include 'components/footer.html' %}
+    <script>
+        document.querySelector(".box").onSubmit = (e) => {
+            e.preventDefault();
+        }
+       </script>
+</body>
+</html>

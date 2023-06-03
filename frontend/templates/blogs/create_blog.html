@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .mainWrapper{
+            overflow-x: hidden;
+        }
+        .blog-wrapper {
+            display:flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 100%;
+            min-width: 280px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 2px solid black;
+        }
+        .heading {
+            display: flex;
+            justify-content: flex-start;
+            font-size: 26px;
+            margin: auto;
+            margin-left:10px;
+            margin-bottom: 10px;
+        }
+        label {
+            font-size: 20px;
+        }
+        .blog-field {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin:10px;
+        }
+
+        input {
+            resize:none;
+            width:calc(100% - 10px);
+            min-height: 50px;
+            padding: 0 10px;
+        }
+        textarea {
+            resize:none;
+            width:calc(100% - 10px);
+            height: 340px;
+            padding: 10px 10px;
+        }
+        .form-submit {
+            display: flex;
+            background-color: rgb(9, 155, 9);
+            color:white;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            margin:10px;
+            width: 100px;
+            height: 40px;
+            font-size: 17px;
+            border:none;
+        }
+        .form-submit:hover {
+            background-color: rgb(7, 179, 7);
+        }
+    </style>
+</head>
+<body>
+    <div class="mainWrapper">
+    {% include 'components/navbar.html' %}
+    <div class="blog-wrapper">
+        <form method="POST" action="" class="blog-form">
+            {% csrf_token %}
+            <div class="heading">
+                New Post
+            </div>
+            <div class="blog-field title">
+                <label for="title">Post Title:</label>
+                <input type="text" name="title" placeholder="Title of your Post">
+            </div>
+            <div class="blog-field content">
+                <label for="content">Post content:</label>
+                <textarea name="content" placeholder="content of your post"></textarea>
+            </div>
+            <button type="submit" class="form-submit"> Create </button>
+        </form>
+    </div>
+    {% include 'components/footer.html' %}
+    
+</div>
+</body>
+</html>
